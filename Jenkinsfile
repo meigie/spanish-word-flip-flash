@@ -41,6 +41,8 @@ pipeline {
                         }
                     }
                     steps {
+                        sh 'rm -rf node_modules'
+                        sh 'npm ci --include=dev'
                         sh 'npx playwright test'
                     }
                 }
